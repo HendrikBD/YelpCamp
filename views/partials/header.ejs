@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>YelpCamp</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md bg-secondary">
+       <a href="/" class="navbar-brand d-flex w-50 mr-auto">YelpCamp</a>
+       <div class="navbar-collapse collapse">
+           <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+
+            <% if(!currentUser){ %>
+               <li class="nav-item">
+                   <a class="nav-link" href="/login">Login</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/register">Sign Up</a>
+               </li>
+            <% } else{ %>
+               <li class="nav-item nav-link"><a href="#">Signed in as <%= currentUser.username %></a></li>
+               <li class="nav-item">
+                   <a class="nav-link" href="/logout">Logout</a>
+               </li>
+            <% } %>               
+
+           </ul>
+       </div>
+    </nav>
+
+    <div class="container">
+            <% if(error && error.length>0){ %>
+                    <div class="alert alert-danger" role="alert">
+                            <%= error %>
+                    </div> 
+            <% } %>
+
+            <% if(success && success.length>0){ %>
+                    <div class="alert alert-success" role="alert">
+                            <%= success %>
+                    </div> 
+            <% } %>
+    </div>
