@@ -1,3 +1,27 @@
+/* Navbar styling */
+.logo {
+  width: 45px;
+  margin-left: 5%;
+}
+
+#brand {
+  margin-left: 5%;
+  vertical-align: bottom;
+}
+
+nav.navbar {
+  background-color: #375F1B;
+}
+
+div.navbar-collapse.collapse {
+  padding-right: 4%;
+}
+
+nav.navbar a{
+  color: white;
+}
+
+
 .card img {
   width: 100%;
 }
@@ -9,3 +33,10 @@
  display: inline;
 } 
 
+#userForm {
+  padding: 100px;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+}
