@@ -12,7 +12,9 @@ body {
 
 #landing-header h1 {
   color: white;
+  font-family: "Merriweather", serif;
 }
+
 
 .slideshow {
   position: fixed;
