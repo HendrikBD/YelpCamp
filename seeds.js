@@ -21,6 +21,8 @@ var userData = [
 
 ];
 
+var commentData = [];
+
 var campData = [];
 //   {
 //     name: "Pinery",
@@ -94,6 +96,25 @@ function seedDB(){
                   console.log("Comment added!");
                 }
               })
+          }
+        })
+      })
+    }
+  });
+
+  Comment.remove({}, function(err){
+    if(err){
+      console.log("Error removing commenst: " + err);
+    }
+    else {
+      console.log("Comments removed");
+      commentData.forEach(function(seed){
+        Comment.create(seed, function(err, comment){
+          if(err){
+            console.log("Error creating comment: " + err)
+          }
+          else {
+            console.log("Comment Created!");
           }
         })
       })
