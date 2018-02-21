@@ -56,14 +56,13 @@ var campData = [];
 function seedDB(){
 
   seedUsers();
-  // seedCampgrounds();
-  // seedComments();
 
 }
 
 
 function seedUsers(){
-  var userSeeds;
+
+  // Remove all users
   User.remove({}, function(err){
     if(err){
       console.log("Error removing users: " + err);
@@ -71,7 +70,8 @@ function seedUsers(){
     else {
       console.log("Old users Removed");
 
-      userSeeds = userData.map(function(seed) {
+      // Map functions to each seeded user that returns a promise
+      var userSeeds = userData.map(function(seed) {
         return new Promise(function(resolve, reject) {
         
           var newUser = new User({username: seed.username})
@@ -82,11 +82,13 @@ function seedUsers(){
             }
             else {
               console.log("User Created");
+              // Resolve promise once user has been added to db
               resolve();
             }
           })
         })
       })
+      // Once all promises are fulfilled, call campground seeding fcn
       Promise.all(userSeeds)
       .then(function(){ seedCampgrounds();})
       .catch(function(err){console.log("promise error: " + err)})
@@ -95,12 +97,15 @@ function seedUsers(){
 
 }
 
+
 function seedCampgrounds(){
+  // Remove campgrounds from db
   Campground.remove({}, function(err){
     if(err){ console.log('Campground Removal Error');
     } else {
       console.log("Campgrounds removed");
       
+      // Map functions to each seeded campground that return promises
       var campSeeds = campData.map(function(seed) {
         return new Promise(function(resolve, reject) {
 
@@ -110,25 +115,13 @@ function seedCampgrounds(){
               reject(err);
             } else{
               console.log("Added a campground");
+              // Resolve promise once campground has been added to db
               resolve();
-              Comment.create(
-                {
-                  text: "This place is pretty cool, but it needs better WiFi!",
-                  author: "Millenial"
-                }, function(err, comment){
-                  if(err){
-                    console.log(err);
-                  } else{
-                    campground.comments.push(comment._id);
-                    campground.save();
-                    console.log("Comment added!");
-                  }
-                }
-              )
             }
           })
         })
       })
+      // Once all promises fulfilled, call comment seeding fcn
       Promise.all(campSeeds)
       .then(function(){ seedComments()})
       .catch(function(err){console.log("Promise Error: " + err);})
