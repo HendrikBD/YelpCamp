@@ -24,14 +24,13 @@ var userData = [
 
 ];
 
-var commentData = [];
+var commentData = [
+  { text: "Wow check out this campground, That lake looks pretty nice!" },
+  { text: "I went here last summer, the sunrise was fantastic, but there were too many mosquitos :("},
+  { text: "Look at that view, consider it on my list!!!" }
+];
 
 var campData = [
-  {
-    name: "Pinery",
-    image: "https://3.bp.blogspot.com/-YjABd6awsBo/UyyJnGB2KEI/AAAAAAAAAVw/JpTAPgdeRBE/s1600/IMG_2801.JPG",
-    description: "A beautiful park for year round visits, filled with sandy beaches and amazing sunsets. Filled with wildlife and rare plantlife to discover."
-  }, 
 
   {
     name: "Algonquin",
@@ -55,6 +54,12 @@ var campData = [
     name: "Arrowhead",
     image: "https://farm6.staticflickr.com/5639/20330043700_73c30b3970.jpg",
     descriptionL: "Come visit Arrowhead provincial park, with large private sites, and great beaches. Open year round, for all types of activities."
+  },
+
+  {
+    name: "Pinery",
+    image: "https://3.bp.blogspot.com/-YjABd6awsBo/UyyJnGB2KEI/AAAAAAAAAVw/JpTAPgdeRBE/s1600/IMG_2801.JPG",
+    description: "A beautiful park for year round visits, filled with sandy beaches and amazing sunsets. Filled with wildlife and rare plantlife to discover."
   }
 
 ];
@@ -96,7 +101,7 @@ function seedUsers(){
       })
       // Once all promises are fulfilled, call campground seeding fcn
       Promise.all(userSeeds)
-      .then(function(){ seedCampgrounds();})
+      .then(function(){ seedComments();})
       .catch(function(err){console.log("promise error: " + err)})
     }
   });
@@ -129,7 +134,7 @@ function seedCampgrounds(){
       })
       // Once all promises fulfilled, call comment seeding fcn
       Promise.all(campSeeds)
-      .then(function(){ seedComments()})
+      .then(function(){console.log("Seed Finished!")})
       .catch(function(err){console.log("Promise Error: " + err);})
     }
   });
@@ -159,10 +164,40 @@ function seedComments(){
         })
       })
       Promise.all(commSeeds)
-      .then(function(){console.log("TEST")})
+      .then(function(){associateComments()})
       .catch(function(err){console.log("promise Error: " + err)});
     }
   });
+}
+
+
+function associateComments(){
+  Comment.find({}, function(err, comments){
+    if(err){
+      reject(err)
+    } else {
+      var commentAss = comments.map(function(comment){
+        return new Promise(function(resolve, reject){
+          User.find({},function(err, users){
+            var userNum = Math.floor(Math.random()*users.length);
+            var user = users[userNum];
+            comment.author.username = user.username;
+            comment.author.id = user._id;
+            comment.save()
+            resolve();
+          })
+        })
+      })
+      Promise.all(commentAss)
+      .then(function(){seedCampgrounds();})
+      .catch(function(err){console.log(err)});
+    }
+  })
+}
+
+
+function associateCampgrounds(){
+  console.log("");
 }
 
 
