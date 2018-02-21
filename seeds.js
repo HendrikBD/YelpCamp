@@ -57,7 +57,7 @@ function seedDB(){
 
   seedUsers();
   // seedCampgrounds();
-  seedComments();
+  // seedComments();
 
 }
 
@@ -100,28 +100,38 @@ function seedCampgrounds(){
     if(err){ console.log('Campground Removal Error');
     } else {
       console.log("Campgrounds removed");
-      campData.forEach(function(seed){
-        Campground.create(seed, function(err, campground){
-          if(err){
-            console.log(err);
-          } else{
-            console.log("Added a campground");
-            Comment.create(
-              {
-                text: "This place is pretty cool, but it needs better WiFi!",
-                author: "Millenial"
-              }, function(err, comment){
-                if(err){
-                  console.log(err);
-                } else{
-                  campground.comments.push(comment._id);
-                  campground.save();
-                  console.log("Comment added!");
+      
+      var campSeeds = campData.map(function(seed) {
+        return new Promise(function(resolve, reject) {
+
+          Campground.create(seed, function(err, campground){
+            if(err){
+              console.log(err);
+              reject(err);
+            } else{
+              console.log("Added a campground");
+              resolve();
+              Comment.create(
+                {
+                  text: "This place is pretty cool, but it needs better WiFi!",
+                  author: "Millenial"
+                }, function(err, comment){
+                  if(err){
+                    console.log(err);
+                  } else{
+                    campground.comments.push(comment._id);
+                    campground.save();
+                    console.log("Comment added!");
+                  }
                 }
-              })
-          }
+              )
+            }
+          })
         })
       })
+      Promise.all(campSeeds)
+      .then(function(){ seedComments()})
+      .catch(function(err){console.log("Promise Error: " + err);})
     }
   });
 }
