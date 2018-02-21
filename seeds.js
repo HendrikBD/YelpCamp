@@ -5,6 +5,9 @@ var mongoose = require("mongoose"),
 
 
 
+var numUsers = 0;
+
+
 var userData = [
   {
     username: "test",
@@ -52,27 +55,47 @@ var campData = [];
 
 function seedDB(){
 
+  seedUsers();
+  // seedCampgrounds();
+  seedComments();
+
+}
+
+
+function seedUsers(){
+  var userSeeds;
   User.remove({}, function(err){
     if(err){
       console.log("Error removing users: " + err);
     }
     else {
-      console.log("Users Removed");
-      userData.forEach(function(seed){
+      console.log("Old users Removed");
+
+      userSeeds = userData.map(function(seed) {
+        return new Promise(function(resolve, reject) {
         
-        var newUser = new User({username: seed.username})
-        User.register(newUser, seed.password, function(err, user){
-          if(err){
-            console.log("Error creating user: " + err);
-          }
-          else {
-            console.log("User Created");
-          }
+          var newUser = new User({username: seed.username})
+          User.register(newUser, seed.password, function(err, user){
+            if(err){
+              console.log("Error creating user: " + err);
+              reject(err)
+            }
+            else {
+              console.log("User Created");
+              resolve();
+            }
+          })
         })
       })
+      Promise.all(userSeeds)
+      .then(function(){ seedCampgrounds();})
+      .catch(function(err){console.log("promise error: " + err)})
     }
   });
 
+}
+
+function seedCampgrounds(){
   Campground.remove({}, function(err){
     if(err){ console.log('Campground Removal Error');
     } else {
@@ -101,7 +124,9 @@ function seedDB(){
       })
     }
   });
+}
 
+function seedComments(){
   Comment.remove({}, function(err){
     if(err){
       console.log("Error removing commenst: " + err);
@@ -120,7 +145,6 @@ function seedDB(){
       })
     }
   });
-
 }
 
 module.exports = seedDB;
