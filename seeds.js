@@ -134,7 +134,7 @@ function seedCampgrounds(){
       })
       // Once all promises fulfilled, call comment seeding fcn
       Promise.all(campSeeds)
-      .then(function(){console.log("Seed Finished!")})
+      .then(function(){associateComments()})
       .catch(function(err){console.log("Promise Error: " + err);})
     }
   });
@@ -164,7 +164,7 @@ function seedComments(){
         })
       })
       Promise.all(commSeeds)
-      .then(function(){associateComments()})
+      .then(function(){seedCampgrounds()})
       .catch(function(err){console.log("promise Error: " + err)});
     }
   });
@@ -186,10 +186,16 @@ function associateComments(){
             comment.save()
             resolve();
           })
+          Campground.find({}, function(err, campgrounds){
+            var campNum = Math.floor(Math.random()*campgrounds.length);
+            var camp = campgrounds[campNum];
+            camp.comments.push(comment._id);
+            camp.save();
+          })
         })
       })
       Promise.all(commentAss)
-      .then(function(){seedCampgrounds();})
+      .then(function(){associateCampgrounds();})
       .catch(function(err){console.log(err)});
     }
   })
@@ -197,7 +203,7 @@ function associateComments(){
 
 
 function associateCampgrounds(){
-  console.log("");
+  console.log("Seeds finished!");
 }
 
 
