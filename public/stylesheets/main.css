@@ -41,6 +41,14 @@ body {
   background-color: #EBF7E3;
 }
 
+.banner {
+  background-color: white;
+  padding: 40px 30px 20px 30px;
+  margin: 15px 0 40px 0;
+  border-radius: 5px;
+  /* text-align: center; */
+}
+
 /*  */
 /* Forms, login & signup */
 /*  */
