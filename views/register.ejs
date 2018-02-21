@@ -1,11 +1,16 @@
 <% include partials/header%>
 
-<h1>Sign Up!</h1>
+<div class="form-spacing-top"> <br></div>
 
-<form action="/register" method="POST">
-        <input type="text" name="username" placeholder="username">
-        <input type="password" name="password" placeholder="password">
-        <button>Sign Up</button>
-</form>
+
+<div class="userForm form-bg container">
+  <div class="container">
+    <h3 class="form-title">Sign Up!</h3>
+
+    <form action="/register" method="POST">
+      <div class="form-group"><input class="form-control" type="text" name="username" placeholder="username"></div>
+      <div class="form-group"><input class="form-control" type="password" name="password" placeholder="password"></div>
+      <button class="form-control">Sign Up</button>
+    </form>
 
 <% include partials/footer %>

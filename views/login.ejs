@@ -1,15 +1,19 @@
 <% include partials/header%>
 
-<h1>Login</h1>
+<div class="form-spacing-top"> <br></div>
 
-<form action="/login" method="POST"> 
+<div class="userForm form-bg container">
+  <div class="container">
+    <h3 class="form-title">Login to YelpCamp</h3>
+
+    <form action="/login" method="POST"> 
         
-        <div class="userForm">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password" placeholder="password">
-            <input type="submit" value="Login">
-        </div>
+      <div class="form-group"><input class="form-control" type="text" name="username" placeholder="username"></div>
+      <div class="form-group"><input class="form-control" type="password" name="password" placeholder="password"></div>
+      <input class="form-control" type="submit" value="Login">
 
-</form>
+    </form>
+  </div>
+</div>
 
 <% include partials/footer %>
