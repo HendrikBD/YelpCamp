@@ -142,18 +142,28 @@ function seedComments(){
     }
     else {
       console.log("Comments removed");
-      commentData.forEach(function(seed){
-        Comment.create(seed, function(err, comment){
-          if(err){
-            console.log("Error creating comment: " + err)
-          }
-          else {
-            console.log("Comment Created!");
-          }
+
+      var commSeeds = commentData.map(function(seed){
+        return new Promise(function(resolve, reject) {
+
+          Comment.create(seed, function(err, comment){
+            if(err){
+              console.log("Error creating comment: " + err)
+              reject(err);
+            }
+            else {
+              console.log("Comment Created!");
+              resolve();
+            }
+          })
         })
       })
+      Promise.all(commSeeds)
+      .then(function(){console.log("TEST")})
+      .catch(function(err){console.log("promise Error: " + err)});
     }
   });
 }
+
 
 module.exports = seedDB;
