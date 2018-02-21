@@ -55,7 +55,6 @@ var campData = [
     name: "Arrowhead",
     image: "https://farm6.staticflickr.com/5639/20330043700_73c30b3970.jpg",
     descriptionL: "Come visit Arrowhead provincial park, with large private sites, and great beaches. Open year round, for all types of activities."
-  }
 
 ];
 
