@@ -203,7 +203,31 @@ function associateComments(){
 
 
 function associateCampgrounds(){
-  console.log("Seeds finished!");
+  Campground.find({},function(err, campgrounds){
+    if(err){
+      console.log(err);
+    } else {
+      var campAss = campgrounds.map(function(camp) {
+        return new Promise(function(resolve, reject) {
+          User.find({}, function(err, users) {
+            if(err){
+              reject(err);
+            } else {
+              var userNum = Math.floor(Math.random()*users.length);
+              var user = users[userNum];
+
+              camp.author.id = user._id;
+              camp.author.username = user.username;
+              camp.save()
+            }
+          })
+        })
+      })
+    }
+    Promise.all(campAss)
+    .then(function(){console.log("Seeds finished!");})
+    .catch(function(err){console.log(err)});
+  })
 }
 
 
