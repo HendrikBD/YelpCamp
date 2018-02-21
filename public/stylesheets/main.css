@@ -21,20 +21,11 @@ nav.navbar a{
   color: white;
 }
 
-.card img {
-  width: 100%;
-}
-.card {
-  padding: 0.4%;
-}
 
 .delete-form{
  display: inline;
 } 
 
-#userForm {
-  padding: 100px;
-}
 
 body {
   font-family: 'Merriweather', serif;
@@ -46,12 +37,38 @@ body {
   padding: 40px 30px 20px 30px;
   margin: 15px 0 40px 0;
   border-radius: 5px;
-  /* text-align: center; */
 }
 
-/*  */
-/* Forms, login & signup */
-/*  */
+
+
+/*
+ * Card Styling
+ * */
+
+.card img {
+  /* width: 100%; */
+}
+
+.card {
+  padding: 0.4%;
+  font-size: 19px;
+  text-align: center;
+}
+
+.card-title {
+  padding-top: 10px;
+}
+
+
+/* .btn-color { */
+/*   background-color: #66B032; */
+/*   border-color: #66B032; */
+/* } */
+
+
+/*
+* Forms, login & signup
+*  */
 
 div.form-spacing-top {
   padding: 30px 0;
@@ -73,3 +90,6 @@ div.form-spacing-top {
   padding-bottom: 25px;
 }
 
+#userForm {
+  padding: 100px;
+}
