@@ -40,6 +40,10 @@ body {
 }
 
 
+#footer {
+  padding: 20px 0;
+}
+
 
 /*
  * Card Styling
@@ -52,10 +56,13 @@ body {
 .card {
   padding: 0.4%;
   font-size: 19px;
+}
+
+.card.index-title {
   text-align: center;
 }
 
-.card-title {
+.card-title.index-title {
   padding-top: 10px;
 }
 
