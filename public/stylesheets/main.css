@@ -27,16 +27,17 @@ nav.navbar a{
 /*
  * Header & Alets
  *  */
-div.alert {
-}
 
-div.alert-space {
-  height: 50px;
-  /* padding-top: 10px; */
+div.alert {
+  margin: 5px auto;
 }
 
 div.form-spacing-top {
-  padding: 2% 0;
+  padding: 70px 0;
+}
+
+div.alert + div.form-spacing-top {
+  padding: 40px 0;
 }
 
 
@@ -54,7 +55,7 @@ body {
 .banner {
   background-color: white;
   padding: 70px 30px 40px 30px;
-  margin: 0 0 40px 0;
+  margin: 5px 0 40px 0;
   border-radius: 5px;
 }
 
