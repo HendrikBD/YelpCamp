@@ -1,27 +1,25 @@
-<% include ../partials/header%>
+<% include ../partials/header%> 
 
-<div class="container">
+<div class="container-fluid">
         <div class="row">
 
                 <!-- Info panel on left -->
-                <div class="col-md-3">
-                        <!-- <p class="lead">YelpCamp</p> -->
-                        <div id="campMap">
-                        </div>
-                        <div class="list-group">
-                                <li class="list-group-item active">Info 1</li>
-                                <li class="list-group-item">Info 2</li>
-                                <li class="list-group-item">Info 3</li>
-                        </div>
+                <div class="col-md-4" style="text-align: center">
+                  <div id="campMap"></div>
+                  <h3><%= campground.name %></h3>
+                  <div class="list-group">
+                    <li class="list-group-item active">Description</li>
+                    <li class="list-group-item">Activities</li>
+                    <li class="list-group-item">Comments</li>
+                  </div>
+
                 </div>
 
                 <!-- Main Content, to the right -->
-                <div class="col-md-9">
+                <div class="col-md-8">
                         <div class="card">
                                 <img class="card-img-top" src="<%= campground.image %>">
                                 <div class="card-title">
-                                        <h4><a><%= campground.name %></a></h4>
-                                        <h4 class="float-right">$<%=campground.price%>/night</h4>
                                         <p><%= campground.description %></p>
                                         <p><em>Submitted by: <%= campground.author.username%></em></p>
                                         <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
