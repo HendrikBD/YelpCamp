@@ -13,6 +13,7 @@
 
 nav.navbar {
   background-color: #375F1B;
+  margin-bottom: 10px;
 }
 
 div.navbar-collapse.collapse {
@@ -29,7 +30,7 @@ nav.navbar a{
  *  */
 
 div.alert {
-  margin: 5px auto;
+  margin: 0 auto 5px auto;
 }
 
 div.form-spacing-top {
@@ -116,4 +117,14 @@ body {
 
 #userForm {
   padding: 100px;
+}
+
+
+/*
+* Activity Icon
+* */
+
+.activity-icons {
+  width: 20px;
+  height: 20px;
 }
