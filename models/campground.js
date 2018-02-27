@@ -17,6 +17,12 @@ var campgroundSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment"
     }
+  ],
+  activities: [
+    {
+      title: String,
+      image: String
+    }
   ]
 });
 
