@@ -123,16 +123,20 @@ body {
 * Show navigation buttons
 */
 
+.navBtns {
+  position: sticky;
+  top: 30px;
+}
+
 .act {
   background-color: #66B032;
 }
 
 .list-group-item {
-  color: black;
 }
 
 .list-group-item:hover {
-  color: black;
+  cursor: pointer;
 }
 
 
