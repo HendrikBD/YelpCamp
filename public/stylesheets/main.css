@@ -119,10 +119,26 @@ body {
   padding: 100px;
 }
 
+/*  
+* Show navigation buttons
+*/
+
+.act {
+  background-color: #66B032;
+}
+
+.list-group-item {
+  color: black;
+}
+
+.list-group-item:hover {
+  color: black;
+}
+
 
 /*
 * Activity Icon
-* */
+*/
 
 .activity-icons {
   width: 25px;
