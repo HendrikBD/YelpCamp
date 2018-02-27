@@ -8,9 +8,9 @@
       <div id="campMap"></div>
       <h3><%= campground.name %></h3>
       <div class="list-group">
-        <li class="list-group-item active">Description</li>
-        <li class="list-group-item">Activities</li>
-        <li class="list-group-item">Comments</li>
+        <a class="list-group-item act" href="#">Description</a>
+        <a class="list-group-item" href="#">Activities</a>
+        <a class="list-group-item" href="#">Comments</a>
       </div>
 
     </div>
@@ -19,7 +19,7 @@
     <div class="col-md-8">
 
       <!-- Main Image and description -->
-      <div class="card">
+      <div class="card" id="description">
         <img class="card-img-top" src="<%= campground.image %>">
         <div class="card-title">
           <p><%= campground.description %></p>
@@ -36,7 +36,7 @@
 
       <!-- Activity section -->
       <% if(campground.activities.length){ %>
-        <div class="card">
+        <div class="card" id="activities">
           <div class="row activity-row">
             <% campground.activities.forEach(function(activity){ %>
               <div class="col-md-4 col-sm-6">
@@ -50,7 +50,7 @@
 
 
       <!-- Comments & new comment form -->
-      <div class="card">
+      <div class="card" id="comments">
         <div class="card-body text-right">
           <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
         </div>
@@ -81,6 +81,7 @@
 
 
 
+<script type="text/javascript" src="/scripts/show.js"></script>
 
 
 <% include ../partials/footer %>
