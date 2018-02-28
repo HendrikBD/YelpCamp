@@ -26,6 +26,7 @@
           <p><%= campground.description %></p>
           <p class="author"><em>Submitted by: <%= campground.author.username%></em></p>
           <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+            <hr>
             <a class="btn btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
             <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
               <button class="btn btn-danger">Delete</button>
@@ -38,6 +39,8 @@
       <!-- Activity section -->
       <% if(campground.activities.length){ %>
         <div class="card" id="activities">
+          <h2><u>Activities</u></h2>
+          <hr>
           <div class="row activity-row">
             <% campground.activities.forEach(function(activity){ %>
               <div class="col-md-4 col-sm-6">
@@ -52,14 +55,21 @@
 
       <!-- Comments & new comment form -->
       <div class="card" id="comments">
+        <h2><u>Comments</u></h2>
+        <hr>
         <% if(currentUser){ %>
-          <div class="card-body text-right">
-            <a class="btn btn-primary" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
-          </div>
+
+          <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+            <div class="form-group new-comment">
+              <textarea class="form-control" name="comment[text]" placeholder="Add New Comment" rows="4"></textarea>
+              <button class="form-control btn-success">Submit</button>
+            </div>
+          </form>
           <hr>
         <% } else { %>
           <br style="margin: 5px">
         <% } %>
+
         <% campground.comments.forEach(function(comment){ %>
           <div class="row">
             <div class="col-md-12">
@@ -80,6 +90,8 @@
             <hr>
           <% } %>
         <% }) %>
+
+
 
       </div>
     </div>
