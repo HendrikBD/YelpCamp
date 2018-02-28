@@ -5,8 +5,9 @@
 
     <!-- Info panel on left -->
     <div class="col-md-4" style="text-align: center">
+      <div class="card top"><h1><%= campground.name %></h1></div>
       <div id="campMap"></div>
-      <h3><%= campground.name %></h3>
+      <!-- <h1><%= campground.name %></h1> -->
       <div class="list-group navBtns">
         <a class="list-group-item">Description</a>
         <a class="list-group-item">Activities</a>
@@ -19,11 +20,11 @@
     <div class="col-md-8">
 
       <!-- Main Image and description -->
-      <div class="card" id="description">
+      <div class="card top" id="description">
         <img class="card-img-top" src="<%= campground.image %>">
         <div class="card-title">
           <p><%= campground.description %></p>
-          <p><em>Submitted by: <%= campground.author.username%></em></p>
+          <p class="author"><em>Submitted by: <%= campground.author.username%></em></p>
           <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
             <a class="btn btn-warning" href="/campgrounds/<%= campground._id%>/edit">Edit</a>
             <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
