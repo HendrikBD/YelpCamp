@@ -371,11 +371,8 @@ function seedComments(){
       var commSeeds = commentData.map(function(seed){
         return new Promise(function(resolve, reject) {
 
-          let time = Math.floor(Math.random()*(1527279351470-1427259351470) + 1427259351470);
-          // seed["time"] = String(time);
+          let time = Math.floor(Math.random()*(1527279351470-1487259351470) + 1487259351470);
           seed["time"] =time;
-          // console.log(typeof(time))
-          console.log(seed);
 
           Comment.create(seed, function(err, comment){
             if(err){
