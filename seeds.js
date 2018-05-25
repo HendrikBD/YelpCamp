@@ -15,11 +15,16 @@ var userData = [
     password: "test"
   },
   {
-    username: "HendrikBD",
+    username: "test123",
     password: "password"
   },
   {
     username: "test2",
+    password: "test"
+  },
+
+  {
+    username: "SomeGuy",
     password: "test"
   }
 
@@ -70,23 +75,27 @@ var campData = [
     activities: [
       {
         title: "Hiking",
-        image: "/icons/hike.png"
+        // image: "/icons/hike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
       },
       {
         title: "Fishing",
-        image: "/icons/fish.png"
+        // image: "/icons/fish.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
       },
       {
         title: "Canoeing",
-        image: "/icons/canoe.png"
+        // image: "/icons/canoe.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
       },
       {
         title: "Bike Trails",
-        image: "/icons/bike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbike.png?1526418520286"
       },
       {
         title: "Boating",
-        image: "/icons/boat.png"
+        // image: "/icons/boat.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fboat.png?1526418528585"
       }
     ]
   },
@@ -98,19 +107,19 @@ var campData = [
     activities: [
       {
         title: "Hiking",
-        image: "/icons/hike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
       },
       {
         title: "Fishing",
-        image: "/icons/fish.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
       },
       {
         title: "Canoeing",
-        image: "/icons/canoe.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
       },
       {
         title: "Boating",
-        image: "/icons/boat.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fboat.png?1526418528585"
       }
     ]
   },
@@ -122,23 +131,24 @@ var campData = [
     activities: [
       {
         title: "Hiking",
-        image: "/icons/hike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
       },
       {
         title: "Fishing",
-        image: "/icons/fish.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
       },
       {
         title: "Canoeing",
-        image: "/icons/canoe.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
       },
       {
         title: "Beach Access",
-        image: "/icons/beach.png"
+        // image: "/icons/beach.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbeach.png?1526418518874"
       },
       {
         title: "Bike Trails",
-        image: "/icons/bike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbike.png?1526418520286"
       }
     ]
   },
@@ -150,23 +160,23 @@ var campData = [
     activities: [
       {
         title: "Hiking",
-        image: "/icons/hike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
       },
       {
         title: "Fishing",
-        image: "/icons/fish.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
       },
       {
         title: "Canoeing",
-        image: "/icons/canoe.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
       },
       {
         title: "Beach Access",
-        image: "/icons/beach.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbeach.png?1526418518874"
       },
       {
         title: "Bike Trails",
-        image: "/icons/bike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbike.png?1526418520286"
       }
     ]
   },
@@ -178,23 +188,23 @@ var campData = [
     activities: [
       {
         title: "Hiking",
-        image: "/icons/hike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
       },
       {
         title: "Fishing",
-        image: "/icons/fish.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
       },
       {
         title: "Canoeing",
-        image: "/icons/canoe.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
       },
       {
         title: "Beach Access",
-        image: "/icons/beach.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbeach.png?1526418518874"
       },
       {
         title: "Bike Trails",
-        image: "/icons/bike.png"
+        image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbike.png?1526418520286"
       }
     ]
   }
@@ -204,31 +214,31 @@ var campData = [
 activityData = [
   {
     title: "Hiking",
-    image: "/icons/hike.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fhike.png?1526418533245"
   },
   {
     title: "Fishing",
-    image: "/icons/fish.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Ffish.png?1526418530949"
   },
   {
     title: "Canoeing",
-    image: "/icons/canoe.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fcanoe.png?1526418526612"
   },
   {
     title: "Beach Access",
-    image: "/icons/beach.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbeach.png?1526418518874"
   },
   {
     title: "Bike Trails",
-    image: "/icons/bike.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fbike.png?1526418520286"
   },
   {
     title: "Boating",
-    image: "/icons/boat.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fboat.png?1526418528585"
   },
   {
     title: "Pool",
-    image: "/icons/pool.png"
+    image: "https://cdn.glitch.com/f9f1cb62-3c58-4034-9015-b33d618d38d5%2Fpool.png?1526418535204"
   }
 ]
 
