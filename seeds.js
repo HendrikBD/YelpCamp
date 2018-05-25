@@ -49,7 +49,7 @@ var commentData = [
   { text: "Our family loves this campground! The bathrooms are clean, showers have nice, hot water and the hospitality station is great too! It's fairly central to most hiking trails which is a bonus."},
   { text: "Pleasant staff, clean sites, reasonable price, good experience. Would stay again. Easy to make reservation over the phone. Stayed on a Monday night, so not busy"},
   { text: "First trip here, stayed from Friday to Tuesday. Had a great time, it is a little tight backing into your site but once you're in, there's plenty of room"},
-  { text: "We spent the month of October at Apache. The staff and facilities are above average. The location is excellent. The campground is well managed"},
+  { text: "loved this place was so much fun for the kids but a little on the pricey side for the size of the park and activities that it offers."},
   { text: "We shared the place with my friend & her family. This trip was the best time I have had. I loved the location & the view. I could stay here often for sure. I loved the pool area. There was a place for adults & for kids."},
   { text: "Stayed 4 nights in a tent. Nice staff, very clean, well kept facilities and grounds. Showers and restrooms were clean and well kept. Pool is small, but nice. Close to beautiful beaches and amenities."},
   { text: "I went here last summer, the sunrise was fantastic, but there were too many mosquitos :("},
