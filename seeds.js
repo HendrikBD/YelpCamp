@@ -15,11 +15,51 @@ var userData = [
     password: "test"
   },
   {
-    username: "test123",
+    username: "EricEvans",
     password: "password"
   },
   {
-    username: "test2",
+    username: "HermanG",
+    password: "test"
+  },
+
+  {
+    username: "CampGuru",
+    password: "test"
+  },
+
+  {
+    username: "Sticky",
+    password: "test"
+  },
+
+  {
+    username: "Riddly",
+    password: "test"
+  },
+
+  {
+    username: "VonHolt",
+    password: "test"
+  },
+
+  {
+    username: "GrettaLiz",
+    password: "test"
+  },
+
+  {
+    username: "Robert77",
+    password: "test"
+  },
+
+  {
+    username: "TestTube",
+    password: "test"
+  },
+  
+  {
+    username: "EagleEye",
     password: "test"
   },
 
@@ -330,6 +370,12 @@ function seedComments(){
 
       var commSeeds = commentData.map(function(seed){
         return new Promise(function(resolve, reject) {
+
+          let time = Math.floor(Math.random()*(1527279351470-1427259351470) + 1427259351470);
+          // seed["time"] = String(time);
+          seed["time"] =time;
+          // console.log(typeof(time))
+          console.log(seed);
 
           Comment.create(seed, function(err, comment){
             if(err){
