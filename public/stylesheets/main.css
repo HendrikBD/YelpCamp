@@ -235,3 +235,8 @@ div h2 {
 #comments div button {
   margin-top: 5px;
 }
+
+#comments > .row {
+  margin-right: 0;
+  margin-left: 0;
+}
