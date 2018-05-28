@@ -10,7 +10,15 @@
         
       <div class="form-group"><input class="form-control" type="text" name="username" placeholder="Username"></div>
       <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-      <button class="form-control btn-success">Submit</button>
+      <button class="form-control btn btn-success">Submit</button>
+
+    </form>
+    
+    <form class="testAcc" action="/login" method="POST"> 
+        
+      <div class="form-group" style="display:none;"><input class="form-control" type="text" name="username" value="test"></div>
+      <div class="form-group" style="display: none;"><input class="form-control" type="password" name="password" value="test"></div>
+      <button class="form-control btn btn-primary testAcc">Log Into Test Account</button>
 
     </form>
   </div>
