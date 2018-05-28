@@ -119,6 +119,12 @@ body {
   padding: 100px;
 }
 
+.newCamp{
+  width: 80%;
+  max-width: 1000px;
+  margin-top: 50px;
+}
+
 /*  
  * Show Styling
 */

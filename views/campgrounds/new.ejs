@@ -1,31 +1,26 @@
 <% include ../partials/header %>
 
-<div class="container">
-  <!-- <div class="row" style="text&#45;align: center;">  -->
-  <h1 style="text-align: center;">Create a new Campground:</h1>
-  <!-- </div> -->
-    
-  <div class="row"> 
-    <div style="width:30%; margin: 15px auto;">
+<div class="newCamp form-bg container">
+  <div class="container">
+    <h3 class="form-title">Create a New Campground</h3>
+
       <form action="/campgrounds" method="POST">
 
         <div class="form-group">
-          <input class="form-control" type="text" name="name" placeholder="name">
+          <input class="form-control" type="text" name="name" placeholder="Name">
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" name="image" placeholder="image url">
+          <input class="form-control" type="text" name="image" placeholder="Image url">
         </div>
         <div class="form-group">
-          <input class="form-control" type="text" name="description" placeholder="description">
+          <input class="form-control" type="text" name="description" placeholder="Description">
         </div>
         <div class="form-group">
           <button class="btn btn-lg btn-default btn-block btn-primary">Submit!</button>
         </div>
 
       </form>
-      <a href="/campgrounds">Back to Campgrounds</a>
-    </div>
-    
+
   </div>
 </div>
 
