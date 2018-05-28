@@ -169,7 +169,7 @@ div.card-title p.author{
 }
 
 .act {
-  background-color: #66B032;
+  background-color: #28A745;
 }
 
 .list-group-item {
@@ -191,7 +191,7 @@ div h2 {
 .activity-icons {
   width: 35px;
   height: 35px;
-  background-color: #66B032;
+  background-color: #28A745;
   border: #66B032 solid 2px;
   border-radius: 5px;
 }
