@@ -194,10 +194,12 @@ div h2 {
 
 .activity-row {
   margin: 10px 0 10px 10px;
+  overflow: hidden;
 }
 
 .activity-row .col-md-4 {
   margin: 5px 0;
+  white-space: nowrap;
 }
 
 .activity-icons~span {
