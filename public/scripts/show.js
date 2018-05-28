@@ -35,7 +35,6 @@ window.addEventListener("scroll",function(){
 
 function setActiveButton(){
   var scrollLoc = window.scrollY;
-  console.log(scrollLoc)
   if(scrollLoc<jumpLocs[1] && currLoc!=0){
     currLoc = 0;
     listItems[0].classList.add("act");
