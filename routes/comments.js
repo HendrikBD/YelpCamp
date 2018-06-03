@@ -30,6 +30,9 @@ router.post("/", middleware.isLoggedIn, function(req,res){
           //add username & id to comment & save
           comment.author.id = req.user._id;
           comment.author.username = req.user.username
+
+          let date = new Date();
+          comment.time = date.valueOr();
           comment.save()
 
           campground.comments.push(comment._id);
